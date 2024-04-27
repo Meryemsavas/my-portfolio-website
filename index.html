@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="this website is portfolio of Meryem Savas.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="icon" type="image/x-icon" href="img/6384-janky-rocket.png">
+    <link href="https://fonts.cdnfonts.com/css/maputo" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body class="page1">
+    <div class="container">
+        <div class="text">
+            <h1 class="first">
+                Hi There, I'm <span>Meryem Savas</span></h1>
+            <p class="paragraaf">I'm a <span>Software Developer</span> student.
+            </p>
+            <a href="aboutme.html" class="button">About me!</a>
+            <div class="icoons">
+                <a href="https://instagram.com/mrym_svss?igshid=YTQwZjQ0NmI0OA=="><img src="img/insta.png"
+                        alt="instagram"></a>
+                <a href="https://www.facebook.com/profile.php?id=100010206348510"><img src="img/face.png"
+                        alt="facebook"></a>
+                <a href="https://www.snapchat.com/add/mrym.svsss?share_id=acR9HBBwcLo&locale=nl-NL"><img
+                        src="img/snap.png" alt="snapchat"></a>
+                <a href="https://www.linkedin.com/in/meryem-savas-364389290/"><img src="img/link.png"
+                        alt="linkedin"></a>
+                <a href="https://nl.pinterest.com/merimeri135/"><img src="img/pint.png" alt="pinterest"></a>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="img/really.png" alt="sun">
+        </div>
+    </div>
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <script>
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        const colors = [
+                "#26577c",
+                "#595464",
+                "#5f5461",
+                "#67535d",
+                "#6f5359",
+                "#775255",
+                "#7f5151",
+                "#85514e",
+                "#8d514a",
+                "#955046",
+                "#9d5042",
+                "#a5503e",
+                "#ad503a",
+                "#b35037",
+                "#b55036",
+                "#bb5033",
+                "#c3502f",
+                "#c9502c",
+                "#cf5029",
+                "#d75025",
+                "#e7501d",
+                "#ef5019"
+            ];
+
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+
+        });
+
+        function animateCircles() {
+
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+
+
+    </script>
+
+
+</body>
+
+</html>

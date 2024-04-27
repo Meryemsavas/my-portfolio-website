@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link href="https://fonts.cdnfonts.com/css/maputo" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/6384-janky-rocket.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="img/6384-janky-rocket.png">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body class="page2">
+
+    <div class="container3">
+
+        <div class="navbar">
+            <nav>
+                <a href="index.html"><img class="logo" src="img/mylogo.png" alt="A logo"></a>
+                <ul class="navigationbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutme.html">About me</a></li>
+                    <li><a href="myskills.html">Skills</a></li>
+                    <li><a class="active" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <h1 class="aboutme">CONTACT</h1>
+
+        <div class="contactus">
+
+            <div class="left-container">
+                <img class="bigimg" src="img/contacct.png" alt="contact us">
+            </div>
+
+            <div class="right-container">
+                <form autocomplete="off">
+                    <p class="sendme"><span class="line">~-</span>ASK ME ANYTHING!<span class="line">-~</span></p>
+
+                    <input type="text" id="fname" name="fname" placeholder="Name"><br>
+                    <input type="email" id="email" name="email" placeholder="Email"><br>
+                    <input type="tel" id="tel" name="tel" placeholder="Telefon number"><br>
+                    <textarea rows="4" placeholder="Message"></textarea>
+                    <input class="submit" type="submit" value="SUBMIT">
+                </form>
+            </div>
+        </div>
+
+
+        <footer>
+            <p class="thanks">~-Thanks for visiting!-~</p>
+
+            <div class="row social">
+                <a target="blank" href='https://www.snapchat.com/add/mrym.svsss?share_id=acR9HBBwcLo&locale=nl-NL'><i
+                        class="fab fa-snapchat"></i></a>
+                <a target="blank" href='https://www.facebook.com/profile.php?id=100010206348510'><i
+                        class='fab fa-facebook'></i></a>
+                <a target="blank" href='https://instagram.com/mrym_svss?igshid=YTQwZjQ0NmI0OA=='><i
+                        class='fab fa-instagram'></i></a>
+                <a target="blank" href="https://www.linkedin.com/in/meryem-savas-364389290/"><i
+                        class="fab fa-linkedin"></i></a>
+                <a target="blank" href="https://nl.pinterest.com/merimeri135/"> <i class="fab fa-pinterest"></i></a>
+            </div>
+
+            <p class="copy">Copyright &#169; 2023 <a href="https://www.linkedin.com/in/meryem-savas-364389290/"
+                    class="myname">Meryem Savas</a> — All Rights Reserved — Made
+                with <img src="img/footerheart.png" class="footerheart" alt="heart"> </p>
+
+        </footer>
+
+    </div>
+
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <script>
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+
+        const colors = [
+                "#26577c",
+                "#595464",
+                "#5f5461",
+                "#67535d",
+                "#6f5359",
+                "#775255",
+                "#7f5151",
+                "#85514e",
+                "#8d514a",
+                "#955046",
+                "#9d5042",
+                "#a5503e",
+                "#ad503a",
+                "#b35037",
+                "#b55036",
+                "#bb5033",
+                "#c3502f",
+                "#c9502c",
+                "#cf5029",
+                "#d75025",
+                "#e7501d",
+                "#ef5019"
+            ];
+
+        circles.forEach(function (circle, index) {
+            circle.x = 0;
+            circle.y = 0;
+            circle.style.backgroundColor = colors[index % colors.length];
+        });
+
+        window.addEventListener("mousemove", function (e) {
+            coords.x = e.clientX;
+            coords.y = e.clientY;
+
+        });
+
+        function animateCircles() {
+
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+
+                circle.style.scale = (circles.length - index) / circles.length;
+
+                circle.x = x;
+                circle.y = y;
+
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+            });
+
+            requestAnimationFrame(animateCircles);
+        }
+
+        animateCircles();
+
+
+    </script>
+
+</body>
+
+</html>

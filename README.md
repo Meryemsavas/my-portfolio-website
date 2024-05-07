@@ -27,3 +27,5 @@ This project is built using HTML, CSS, and a bit of JavaScript for a creative cu
 
 ## **Homepage preview**
 ![homepage](https://github.com/Meryemsavas/my-portfolio-website/assets/148993917/4214477a-84a1-4e81-bd49-30d3944d49ca)
+
+Please contact me at [meryemsavas1234@gmail.com](mailto:meryemsavas1234@gmail.com) if you have any feedback for the website. 👊🎈🎈
